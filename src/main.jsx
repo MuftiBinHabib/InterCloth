@@ -9,16 +9,21 @@ import {
 import RootLayout from './layout/RootLayout.jsx';
 import Suppliers from '../components/Suppliers.jsx';
 
+
 const router = createBrowserRouter([
   {
     path : "/",
     Component : RootLayout,
+    
+    
+
     children : [
+     
       {
 
         path : "/items",
       element : <Suppliers />
-      
+
       }
       
     ]
