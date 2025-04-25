@@ -6,7 +6,7 @@ const HowItWorks = () => {
     <div className="container">
 
 
-<div className="font-poppins mt-[70px] text-2xl flex justify-between">
+<div className="font-poppins mt-[70px] text-2xl lg:flex justify-between">
   
   
   <div className="left">
