@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 
 const Footer = () => {
   return (
+    <div className="container">
     <div className="w-full mt-60 bg-black text-white">
       <section className="flex justify-between items-center px-5 py-5">
         <div className="text-4xl">InterCloth</div>
@@ -23,6 +24,7 @@ const Footer = () => {
           </li>
         </ul>
       </section>
+    </div>
     </div>
   );
 };
