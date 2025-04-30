@@ -6,7 +6,7 @@ const Footer = () => {
     <div className="container">
     <div className="w-full mt-60 bg-black text-white">
       <section className="flex justify-between items-center px-5 py-5">
-        <div className="text-4xl">InterCloth</div>
+        <div className="text-4xl"><Link to='/'>InterCloth</Link></div>
         <ul className="text-xl space-x-6 ">
           <li>
             <Link to="/faq" className="group relative inline-block">

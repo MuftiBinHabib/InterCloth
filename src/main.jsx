@@ -8,6 +8,8 @@ import Suppliers from '../components/Suppliers.jsx';
 import Home from '../components/pages/Home.jsx';
 import FAQ from '../components/FAQ.jsx';
 import Contact from '../components/Contact.jsx';
+import firebaseConfig from './firebase.config.js';
+
 
 const router = createBrowserRouter([
   {
