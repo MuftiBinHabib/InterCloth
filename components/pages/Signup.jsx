@@ -1,6 +1,52 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
+
+  const auth = getAuth();
+
+  const[userinfo, setuserinfo] = useState({
+    email: "",
+    pass: ""
+  })
+
+  const handleemail = (e) =>{
+     setuserinfo((prev) =>{
+      return {
+        ...prev , email: e.target.value
+      }
+     })
+  }
+
+    const handlepass = (e) =>{
+     setuserinfo((prev) =>{
+      return {
+        ...prev , pass: e.target.value
+      }
+     })
+  }
+
+
+  const handlesubmit = (e) =>{
+    e.preventDefault()
+    createUserWithEmailAndPassword(auth, userinfo.email, userinfo.pass)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+    // ...
+    toast.success('Successfully toasted!')
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+   
+    toast.error('Invalid email')
+  });
+
+  }
+
   return (
      <div className="container">
         <section className="bg-gray-50  mt-5">
@@ -11,7 +57,7 @@ const Signup = () => {
         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
           Sign up
         </h1>
-        <form className="space-y-4 md:space-y-6" action="#">
+        <form className="space-y-4 md:space-y-6" action="#" onSubmit={handlesubmit}>
           <div>
             <label
               htmlFor="email"
@@ -19,7 +65,7 @@ const Signup = () => {
             >
               Your email
             </label>
-            <input
+            <input onChange={handleemail}
               type="email"
               name="email"
               id="email"
@@ -35,7 +81,7 @@ const Signup = () => {
             >
               Password
             </label>
-            <input
+            <input onChange={handlepass}
               type="password"
               name="password"
               id="password"
@@ -85,6 +131,7 @@ const Signup = () => {
       </div>
     </div>
   </div>
+  <Toaster />
 </section>
 
     </div>
