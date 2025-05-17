@@ -39,7 +39,7 @@ const Signup = () => {
     // Signed up 
     const user = userCredential.user;
     // ...
-    toast.success('Successfully toasted!')
+    toast.success('Verification mail sent!')
     sendEmailVerification(auth.currentUser)
   .then(() => {
     // Email verification sent!

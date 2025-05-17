@@ -1,9 +1,50 @@
-import React from 'react'
-import { Link } from 'react-router'
+import { getAuth } from 'firebase/auth';
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router'
+import toast, { Toaster } from 'react-hot-toast';
 
 const Login = () => {
+
+  const navigate = useNavigate()
+
+   const auth = getAuth();
+
+  const[userinfo, setuserinfo] = useState({
+    email: "",
+    pass: ""
+  })
+
+  const handleemail = (e) =>{
+     setuserinfo((prev) =>{
+      return {
+        ...prev , email: e.target.value
+      }
+     })
+  }
+
+    const handlepass = (e) =>{
+     setuserinfo((prev) =>{
+      return {
+        ...prev , pass: e.target.value
+      }
+     })
+  }
+
+
+  const handlesubmit = (e) =>{
+    e.preventDefault()
+    if(!userinfo.email || !userinfo.pass ){
+      toast.error('Email / Pass Missing')
+    }
+    else
+    {
+      navigate('/')
+    }
+  }
+
   return (
     <div className="container">
+      <Toaster/>
         <section className="bg-gray-50  mt-5">
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
    
@@ -12,7 +53,7 @@ const Login = () => {
         <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
           Sign in to your account
         </h1>
-        <form className="space-y-4 md:space-y-6" action="#">
+        <form className="space-y-4 md:space-y-6" action="#" onSubmit={handlesubmit}>
           <div>
             <label
               htmlFor="email"
@@ -20,7 +61,7 @@ const Login = () => {
             >
               Your email
             </label>
-            <input
+            <input onChange={handleemail}
               type="email"
               name="email"
               id="email"
@@ -36,7 +77,7 @@ const Login = () => {
             >
               Password
             </label>
-            <input
+            <input onChange={handlepass}
               type="password"
               name="password"
               id="password"
