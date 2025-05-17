@@ -9,6 +9,8 @@ import Home from '../components/pages/Home.jsx';
 import FAQ from '../components/FAQ.jsx';
 import Contact from '../components/Contact.jsx';
 import firebaseConfig from './firebase.config.js';
+import Login from '../components/pages/Login.jsx';
+import Signup from '../components/pages/Signup.jsx';
 
 
 const router = createBrowserRouter([
@@ -29,6 +31,12 @@ const router = createBrowserRouter([
       },
       {path: '/contact',
         element: <Contact />
+      },
+      {path: '/login',
+        element: <Login />
+      },
+      {path: '/signup',
+        element: <Signup />
       }
     ],
   },
