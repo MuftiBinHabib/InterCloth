@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification  } from "firebase/auth";
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
@@ -30,12 +30,21 @@ const Signup = () => {
 
   const handlesubmit = (e) =>{
     e.preventDefault()
+    if(!userinfo.email || !userinfo.pass ){
+      toast.error('Email / Pass Missing')
+    }
+    else{
     createUserWithEmailAndPassword(auth, userinfo.email, userinfo.pass)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
     // ...
     toast.success('Successfully toasted!')
+    sendEmailVerification(auth.currentUser)
+  .then(() => {
+    // Email verification sent!
+    // ...
+  });
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -44,7 +53,7 @@ const Signup = () => {
    
     toast.error('Invalid email')
   });
-
+    }
   }
 
   return (
