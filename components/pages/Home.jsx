@@ -1,5 +1,5 @@
 import React from 'react'
-import Suppliers from '../Suppliers'
+import Suppliers from './Suppliers'
 import HowItWorks from '../HowItWorks'
 import Features from '../Features'
 import Header from '../Header'
