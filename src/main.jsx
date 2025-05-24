@@ -13,6 +13,8 @@ import Login from '../components/pages/Login.jsx';
 import Signup from '../components/pages/Signup.jsx';
 import Product from '../components/pages/Product.jsx';
 import RFQ from '../components/pages/RFQ.jsx';
+import IndividualProducts from '../components/IndividualProducts.jsx';
+import Cart from '../components/pages/Cart.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,6 +47,12 @@ const router = createBrowserRouter([
       },
       {path: '/rfq',
         element: <RFQ />
+      },
+      {path: '/ip',
+        element: <IndividualProducts />
+      },
+      {path: '/add',
+        element: <Cart />
       },
     ],
   },

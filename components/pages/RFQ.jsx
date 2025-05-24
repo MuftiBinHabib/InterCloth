@@ -14,10 +14,10 @@ const RFQ = () => {
         <p>Delivery Location / Incoterms</p>
         <p>Delivery Date</p>
         <p>Contact Details</p>
-        <div className='flex justify-between'>
-     
+        
         </div>
-        </div>
+
+        <p>This will be sent via email to suppliers</p>
       </section>
     </div>
   )
