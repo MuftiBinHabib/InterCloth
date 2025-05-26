@@ -21,7 +21,7 @@ const Banner = () => {
           Direct sourcing
         </li>
 
-        <button className='ms-4 bg-green-500 rounded-md pt-3 pb-3 ps-4 pe-4 mt-5'><Link to='/items'>Browse Suppliers</Link></button>
+        <button className='ms-4 bg-green-500 rounded-md pt-3 pb-3 ps-4 pe-4 mt-5'><Link to='/login'>Browse Suppliers</Link></button>
       </ul>
 
       

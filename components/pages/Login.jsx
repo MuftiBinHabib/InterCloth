@@ -38,7 +38,7 @@ const Login = () => {
     }
     else
     {
-      navigate('/')
+      navigate('/items')
     }
   }
 
