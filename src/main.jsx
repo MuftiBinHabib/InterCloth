@@ -15,6 +15,7 @@ import Product from '../components/pages/Product.jsx';
 import RFQ from '../components/pages/RFQ.jsx';
 import IndividualProducts from '../components/IndividualProducts.jsx';
 import Cart from '../components/pages/Cart.jsx';
+import Checkout from '../components/pages/Checkout.jsx';
 
 
 const router = createBrowserRouter([
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
       {path: '/add',
         element: <Cart />
       },
+      {
+        path: '/checkout',
+        element: <Checkout />
+      }
     ],
   },
 ]);

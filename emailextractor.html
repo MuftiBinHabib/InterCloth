@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Extractor by Order</title>
+</head>
+<body>
+  <h2>Email Extractor</h2>
+  <textarea id="rawInput" rows="15" cols="100" placeholder="Paste your raw data here..."></textarea><br><br>
+  <button onclick="extractEmails()">Extract Emails</button>
+
+  <h3>Result:</h3>
+  <pre id="output"></pre>
+
+  <script>
+    function extractEmails() {
+      const input = document.getElementById('rawInput').value;
+
+      // Extract emails after "Email :"
+      const emailMatches = [...input.matchAll(/Email\s*:\s*([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,})/g)];
+      const emails = emailMatches.map(match => match[1]);
+
+      // Extract first 3 names (based on 1. 2. 3. pattern)
+      const nameMatches = [...input.matchAll(/\d+\.\s*([^\n]+)/g)];
+      const names = nameMatches.slice(0, emails.length).map(match => match[1].trim());
+
+      let result = '';
+      for (let i = 0; i < emails.length; i++) {
+        result += `${names[i] || 'Unknown'} → ${emails[i]}\n`;
+      }
+
+      document.getElementById('output').textContent = result || 'No emails found.';
+    }
+  </script>
+</body>
+</html>

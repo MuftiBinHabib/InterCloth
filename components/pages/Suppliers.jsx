@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { IoFilter } from "react-icons/io5";
 
 const Suppliers = () => {
   return (
     <div className="container">
-      <section> {/*factory and buying houses*/}
+      <section className='flex'> {/*factory and buying houses*/}
         <div className='border w-75'>
         <p className='text-center'>Logo</p>
         <h1>Factory Name</h1>
@@ -4105,6 +4106,11 @@ Email : info@zxy-abs.com
 Email : Page 51 of 
 
 </p>
+        </div>
+
+        <div>
+          <p className='flex'>Filter <span className='ps-2 pt-1'><IoFilter /></span></p>
+          
         </div>
       </section>
     </div>
