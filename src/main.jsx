@@ -16,6 +16,7 @@ import RFQ from '../components/pages/RFQ.jsx';
 import IndividualProducts from '../components/IndividualProducts.jsx';
 import Cart from '../components/pages/Cart.jsx';
 import Checkout from '../components/pages/Checkout.jsx';
+import TrackOrder from '../components/pages/TrackOrder.jsx';
 
 
 const router = createBrowserRouter([
@@ -58,7 +59,11 @@ const router = createBrowserRouter([
       {
         path: '/checkout',
         element: <Checkout />
-      }
+      },
+       {
+        path: '/trackorder',
+        element: <TrackOrder />
+      },
     ],
   },
 ]);
