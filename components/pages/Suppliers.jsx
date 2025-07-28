@@ -4108,10 +4108,7 @@ Email : Page 51 of
 </p>
         </div>
 
-        <div>
-          <p className='flex'>Filter <span className='ps-2 pt-1'><IoFilter /></span></p>
-          
-        </div>
+       
       </section>
     </div>
   )

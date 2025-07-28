@@ -13,6 +13,7 @@ const IndividualProducts = () => {
             <p>Capacity</p>
             <p>Description</p>
             <p>tags</p>
+            <p>Size</p>
             <button className='border p-3'><Link to='/add'>Add to Cart</Link></button>
             <button className='border p-3'> <Link to='/rfq'>Request For Quotation</Link></button>
         </section>

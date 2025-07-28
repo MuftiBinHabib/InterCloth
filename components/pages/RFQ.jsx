@@ -14,6 +14,7 @@ const RFQ = () => {
         <p>Delivery Location / Incoterms</p>
         <p>Delivery Date</p>
         <p>Contact Details</p>
+        <p>Size</p>
         
         </div>
 

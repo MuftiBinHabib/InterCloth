@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Checkout = () => {
+  // Sample cart items (replace with actual data later)
+  const cartItems = [
+    { id: 1, name: 'T-shirt', qty: 2, price: 500 },
+    { id: 2, name: 'Jeans', qty: 1, price: 1200 },
+  ];
+
   return (
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Checkout</h1>
@@ -31,17 +37,30 @@ const Checkout = () => {
         <div className="w-full lg:w-1/3 space-y-6">
           <div className="bg-white shadow-md rounded-lg p-4 space-y-4">
             <h2 className="text-xl font-semibold">Order Summary</h2>
+
+            {/* Product List */}
+            <div className="border rounded p-2">
+              {cartItems.map(item => (
+                <div key={item.id} className="flex justify-between text-sm border-b last:border-b-0 py-2">
+                  <span className="w-1/2">{item.name}</span>
+                  <span className="w-1/4 text-center">x{item.qty}</span>
+                  <span className="w-1/4 text-right">৳{item.price * item.qty}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Totals */}
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>৳0.00</span> {/* Placeholder */}
+              <span>৳{cartItems.reduce((total, item) => total + item.price * item.qty, 0)}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping</span>
-              <span>৳0.00</span> {/* Placeholder */}
+              <span>৳0.00</span>
             </div>
             <div className="flex justify-between font-bold">
               <span>Total</span>
-              <span>৳0.00</span> {/* Placeholder */}
+              <span>৳{cartItems.reduce((total, item) => total + item.price * item.qty, 0)}</span>
             </div>
           </div>
 
