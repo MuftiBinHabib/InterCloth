@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 const Checkout = () => {
   // Sample cart items (replace with actual data later)
@@ -66,9 +67,9 @@ const Checkout = () => {
 
           {/* Place Order Button */}
           <div className="text-right">
-            <button className="w-full bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
+            <Link to = '/orderconfirm'><button className="w-full bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">
               Place Order
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

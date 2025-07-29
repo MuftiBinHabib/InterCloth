@@ -17,6 +17,8 @@ import IndividualProducts from '../components/IndividualProducts.jsx';
 import Cart from '../components/pages/Cart.jsx';
 import Checkout from '../components/pages/Checkout.jsx';
 import TrackOrder from '../components/pages/TrackOrder.jsx';
+import OrderConfirmation from '../components/pages/OrderConfirmation.jsx';
+import ViewOrder from '../components/pages/ViewOrder.jsx';
 
 
 const router = createBrowserRouter([
@@ -63,6 +65,14 @@ const router = createBrowserRouter([
        {
         path: '/trackorder',
         element: <TrackOrder />
+      },
+       {
+        path: '/orderconfirm',
+        element: <OrderConfirmation />
+      },
+       {
+        path: '/vieworder',
+        element: <ViewOrder />
       },
     ],
   },

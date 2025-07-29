@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const Cart = () => {
   return (
@@ -8,11 +9,11 @@ const Cart = () => {
           <h1 className=''>Product</h1>
           <p className="">Qty</p>
           <p className="">Price</p>
-          <button 
+          <Link to='/checkout'><button 
             className="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700 transition"
           >
             Add to Cart
-          </button>
+          </button></Link>
         </div>
       </section>
     </div>
