@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const RFQ = () => {
   return (
@@ -18,7 +19,8 @@ const RFQ = () => {
         
         </div>
 
-        <p>This will be sent via email to suppliers</p>
+        <p>This will be sent via email to suppliers and Suppliers will send details via WhatsApp</p>
+        <Link to='/checkout'><button className='bg-green-500 text-white px-2 py-1 border-rounded'>Confirm</button></Link>
       </section>
     </div>
   )
