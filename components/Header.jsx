@@ -23,8 +23,13 @@ const Header = () => {
     <ul className=' hidden lg:flex justify-between gap-10 mt-2'>
         <Link to='/checkout'><li className='text-4xl'><FaShoppingCart /></li></Link>
         <Link to='/login'><li className='text-4xl flex'><IoPerson /><span className='text-2xl ms-1'>Sign In/Sign Up</span></li></Link>
-         <Link to='/trackorder'><li className='text-2xl'><HiMagnifyingGlass /> Track Order</li></Link>
-        
+         <Link to='/trackorder'>
+  <li className='flex items-center gap-2 text-2xl'>
+    <HiMagnifyingGlass />
+    Track Order
+  </li>
+</Link>
+
 
     </ul>
 </div>
