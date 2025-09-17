@@ -31,7 +31,7 @@ const Banner = () => {
               Browse Suppliers
             </button>
           </Link>
-          <Link to="/login">
+          <Link to="/products">
             <button className="bg-blue-500 hover:bg-blue-600 text-white rounded-md py-3 px-6 transition">
               Browse Products
             </button>
